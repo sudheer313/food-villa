@@ -1,8 +1,25 @@
-import { Stack, Button, IconButton, ButtonGroup } from "@mui/material";
+import {
+  Stack,
+  Button,
+  IconButton,
+  ButtonGroup,
+  ToggleButtonGroup,
+  ToggleButton,
+} from "@mui/material";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import FormatBoldIcon from "@mui/icons-material/FormatBold";
+import FormatItalicIcon from "@mui/icons-material/FormatItalic";
+import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
+import { useState } from "react";
 import React from "react";
 
 const Muibutton = () => {
+  const [format, setFormat] = useState("");
+
+  const handleFormatChange = () => {
+    setFormat("blue");
+    console.log(format, setFormat);
+  };
   return (
     <Stack spacing={4}>
       <Stack spacing={2} direction="row">
@@ -75,6 +92,23 @@ const Muibutton = () => {
           <Button onClick={() => alert("center")}>Center</Button>
           <Button onClick={() => alert("right")}>Right</Button>
         </ButtonGroup>
+      </Stack>
+      <Stack direction="row">
+        <ToggleButtonGroup
+          aria-label="text formatting"
+          value={format}
+          onChange={handleFormatChange}
+        >
+          <ToggleButton value="bold" aria-label="bold">
+            <FormatBoldIcon />
+          </ToggleButton>
+          <ToggleButton value="italic" aria-label="italic">
+            <FormatItalicIcon />
+          </ToggleButton>
+          <ToggleButton value="underline" aria-label="underlined">
+            <FormatUnderlinedIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
       </Stack>
     </Stack>
   );
