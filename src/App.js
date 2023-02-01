@@ -10,12 +10,12 @@ function App() {
     <div className="App">
       {/* <h1>Food villa</h1> */}
       {/* <MuiTypography /> */}
-      {/* <Muibutton/> */}
+      <Muibutton/>
       {/* <MuiNavbar /> */}
-      <Stack spacing={4} direction="row">
+      {/* <Stack spacing={4} direction="row">
         <MuiCard />
         <MuiCard />
-      </Stack>
+      </Stack> */}
     </div>
   );
 }
