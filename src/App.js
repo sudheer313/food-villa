@@ -2,6 +2,7 @@ import { Stack } from "@mui/material";
 import "./App.css";
 import Muibutton from "./components/Muibutton";
 import MuiCard from "./components/MuiCard";
+import MuiCheckbox from "./components/MuiCheckbox";
 import MuiNavbar from "./components/MuiNavbar";
 import MuiRadioButton from "./components/MuiRadioButton";
 import MuiSelect from "./components/MuiSelect";
@@ -21,7 +22,8 @@ function App() {
       </Stack> */}
       {/* <MuiTextField/> */}
       {/* <MuiSelect/> */}
-      <MuiRadioButton />
+      {/* <MuiRadioButton /> */}
+      <MuiCheckbox />
     </div>
   );
 }
