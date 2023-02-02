@@ -3,6 +3,7 @@ import "./App.css";
 import Muibutton from "./components/Muibutton";
 import MuiCard from "./components/MuiCard";
 import MuiNavbar from "./components/MuiNavbar";
+import MuiRadioButton from "./components/MuiRadioButton";
 import MuiSelect from "./components/MuiSelect";
 import MuiTextField from "./components/MuiTextField";
 import MuiTypography from "./components/MuiTypography";
@@ -19,7 +20,8 @@ function App() {
         <MuiCard />
       </Stack> */}
       {/* <MuiTextField/> */}
-      <MuiSelect/>
+      {/* <MuiSelect/> */}
+      <MuiRadioButton />
     </div>
   );
 }
