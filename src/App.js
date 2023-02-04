@@ -5,6 +5,7 @@ import MuiCard from "./components/MuiCard";
 import MuiCheckbox from "./components/MuiCheckbox";
 import MuiLayout from "./components/MuiLayout";
 import MuiNavbar from "./components/MuiNavbar";
+import MuiNavbar1 from "./components/MuiNavbar1";
 import MuiRadioButton from "./components/MuiRadioButton";
 import MuiSelect from "./components/MuiSelect";
 import MuiTextField from "./components/MuiTextField";
@@ -16,7 +17,7 @@ function App() {
       {/* <h1>Food villa</h1> */}
       {/* <MuiTypography /> */}
       {/* <Muibutton/> */}
-      {/* <MuiNavbar /> */}
+      <MuiNavbar1 />
       {/* <Stack spacing={4} direction="row">
         <MuiCard />
         <MuiCard />
@@ -25,7 +26,7 @@ function App() {
       {/* <MuiSelect/> */}
       {/* <MuiRadioButton /> */}
       {/* <MuiCheckbox /> */}
-      <MuiLayout />
+      {/* <MuiLayout /> */}
     </div>
   );
 }
