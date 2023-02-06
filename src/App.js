@@ -1,5 +1,7 @@
 import { Stack } from "@mui/material";
 import "./App.css";
+import Axios from "./components/Axios";
+import CardList from "./components/CardList";
 import Muibutton from "./components/Muibutton";
 import MuiCard from "./components/MuiCard";
 import MuiCheckbox from "./components/MuiCheckbox";
@@ -18,10 +20,12 @@ function App() {
       {/* <MuiTypography /> */}
       {/* <Muibutton/> */}
       <MuiNavbar1 />
+      <CardList  />
       {/* <Stack spacing={4} direction="row">
         <MuiCard />
         <MuiCard />
       </Stack> */}
+      {/* <Axios /> */}
       {/* <MuiTextField/> */}
       {/* <MuiSelect/> */}
       {/* <MuiRadioButton /> */}

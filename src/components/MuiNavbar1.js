@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { React, useState } from "react";
+import logo from "../utils/foodvilla.jpg";
 
 const MuiNavbar1 = () => {
   const [anchorE1, setAnchorE1] = useState("");
@@ -22,7 +23,7 @@ const MuiNavbar1 = () => {
     setAnchorE1(null);
   };
   return (
-    <AppBar position="static">
+    <AppBar position="relative">
       <Toolbar>
         <IconButton size="large" edge="start" aria-label="logo">
           <a href="/">
@@ -35,7 +36,8 @@ const MuiNavbar1 = () => {
                 maxWidth: { xs: 350, md: 250 },
               }}
               alt="Food villa."
-              src="https://lh3.googleusercontent.com/p/AF1QipO_6cTc3QdC9L2vAOyCkUPG-G-9YeFxo3YiDu3R=w1080-h608-p-no-v0"
+              // src="https://lh3.googleusercontent.com/p/AF1QipO_6cTc3QdC9L2vAOyCkUPG-G-9YeFxo3YiDu3R=w1080-h608-p-no-v0"
+              src={logo}
             />
           </a>
         </IconButton>
