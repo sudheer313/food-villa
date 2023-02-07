@@ -9,9 +9,11 @@ import {
   Box,
   Stack,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { React, useState } from "react";
 import logo from "../utils/foodvilla.jpg";
+import "../App.css";
 
 const MuiNavbar1 = () => {
   const [anchorE1, setAnchorE1] = useState("");
@@ -30,8 +32,8 @@ const MuiNavbar1 = () => {
             <Box
               component="img"
               sx={{
-                height: 100,
-                width: 100,
+                height: 50,
+                width: 50,
                 maxHeight: { xs: 233, md: 167 },
                 maxWidth: { xs: 350, md: 250 },
               }}
@@ -45,9 +47,16 @@ const MuiNavbar1 = () => {
           Food Villa
         </Typography>
         <Stack direction="row" spacing={2}>
-          <Button color="inherit">Features</Button>
-          <Button color="inherit">Pricing</Button>
-          <Button color="inherit">About</Button>
+          <Link className="link" to="/">
+            <Button color="inherit">Home</Button>
+          </Link>
+          <Link to="/Api">
+            <Button color="inherit">Api</Button>
+          </Link>
+          <Link to="/">
+            <Button color="inherit">About</Button>
+          </Link>
+
           <Button
             color="inherit"
             id="resources-button"
@@ -59,7 +68,9 @@ const MuiNavbar1 = () => {
           >
             Resources
           </Button>
-          <Button color="inherit">Login</Button>
+          <Link to="/login">
+            <Button color="inherit">login</Button>
+          </Link>
         </Stack>
         <Menu
           id="resources-menu"
