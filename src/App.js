@@ -17,6 +17,7 @@ import Home from "./pages/Home";
 import Api from "./pages/Api";
 import NoPage from "./pages/NoPage";
 import Login from "./pages/Login";
+import { UserProvider } from "./components/UserContext";
 
 function App() {
   return (
@@ -37,12 +38,14 @@ function App() {
       {/* <MuiCheckbox /> */}
       {/* <MuiLayout /> */}
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/api" element={<Api />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<NoPage />} />
-        </Routes>
+        <UserProvider value="Sudheer">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/api" element={<Api />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<NoPage />} />
+          </Routes>
+        </UserProvider>
       </BrowserRouter>
     </div>
   );
