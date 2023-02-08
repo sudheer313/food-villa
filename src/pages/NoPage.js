@@ -5,8 +5,8 @@ import { UserConsumer } from "../components/UserContext";
 const NoPage = () => {
   return (
     <UserConsumer>
-      {(username) => {
-        return <div>Hello {username}</div>;
+      {({ fname }) => {
+        return <div>Hello {fname}</div>;
       }}
     </UserConsumer>
   );

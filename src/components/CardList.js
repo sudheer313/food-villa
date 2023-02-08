@@ -10,63 +10,46 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
+import RestaurentCard from "./RestaurentCard";
 const CardList = () => {
-  const [cardItems, setCardItems] = useState([]);
+  const [restaurents, setRestaurents] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const result = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts"
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6864894&lng=77.2595642&page_type=DESKTOP_WEB_LISTING"
       );
       console.log(result.data);
-      setCardItems(result.data);
+      setRestaurents(result.data?.data?.cards[2]?.data?.data?.cards);
+      setLoading(false);
     };
     fetchData();
   }, []);
+  console.log(restaurents);
   return (
-    <Container
-      maxWidth={"md"}
-      style={{
-        marginTop: "40px",
-      }}
-    >
-      <Grid container spacing={4}>
-        {cardItems.map((cardItem, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card
-              style={{
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <CardMedia
-                component="img"
-                height="140"
-                image="https://source.unsplash.com/random"
-                alt="unsplash image"
+    <div>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <Container
+          maxWidth={"md"}
+          style={{
+            marginTop: "40px",
+          }}
+        >
+          <Grid container spacing={4}>
+            {restaurents.map((restaurent) => (
+              <RestaurentCard
+                data={restaurent.data}
+                {...restaurent.data}
+                key={restaurent.data.id}
               />
-              <CardContent
-                style={{
-                  flexGrow: 1,
-                }}
-              >
-                <Typography>{cardItem.id}</Typography>
-                <Typography gutterBottom variant="h5" component="div">
-                  {cardItem.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {cardItem.body}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn more</Button>
-              </CardActions>
-            </Card>
+            ))}
           </Grid>
-        ))}
-      </Grid>
-    </Container>
+        </Container>
+      )}
+    </div>
   );
 };
 

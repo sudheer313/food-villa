@@ -38,7 +38,11 @@ function App() {
       {/* <MuiCheckbox /> */}
       {/* <MuiLayout /> */}
       <BrowserRouter>
-        <UserProvider value="Sudheer">
+        <UserProvider
+          value={{
+            fname: "Nihar",
+          }}
+        >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/api" element={<Api />} />

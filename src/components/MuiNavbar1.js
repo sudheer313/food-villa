@@ -14,6 +14,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { React, useState } from "react";
 import logo from "../utils/foodvilla.jpg";
 import "../App.css";
+import { UserConsumer } from "./UserContext";
 
 const MuiNavbar1 = () => {
   const [anchorE1, setAnchorE1] = useState("");
@@ -43,6 +44,11 @@ const MuiNavbar1 = () => {
             />
           </a>
         </IconButton>
+        <UserConsumer>
+          {({ fname }) => {
+            return <div>Hello{fname}</div>;
+          }}
+        </UserConsumer>
         <Typography variant="h6" component="div" sx={{ flexGrow: "1" }}>
           Food Villa
         </Typography>
