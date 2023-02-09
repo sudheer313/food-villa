@@ -31,16 +31,18 @@ const CardList = () => {
   return (
     <div>
       {loading ? (
-       <BallTriangle 
-       height={500}
-       width={1000}
-       radius={9}
-       color="#4fa94d"
-       ariaLabel="ball-triangle-loading"
-       wrapperClass={{}}
-       wrapperStyle=""
-       visible={true}
-     />
+        <div className="spinner">
+          <BallTriangle
+            height={100}
+            width={100}
+            radius={5}
+            color="#4fa94d"
+            ariaLabel="ball-triangle-loading"
+            wrapperClass={{}}
+            wrapperStyle=""
+            visible={true}
+          />
+        </div>
       ) : (
         <Container
           maxWidth={"md"}

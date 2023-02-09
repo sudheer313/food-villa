@@ -18,6 +18,7 @@ import Api from "./pages/Api";
 import NoPage from "./pages/NoPage";
 import Login from "./pages/Login";
 import { UserProvider } from "./components/UserContext";
+import RestaurentDetails from "./pages/RestaurentDetails";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/api" element={<Api />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/restaurent/:id" element={<RestaurentDetails />} />
             <Route path="*" element={<NoPage />} />
           </Routes>
         </UserProvider>
