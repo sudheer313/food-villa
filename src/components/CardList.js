@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import RestaurentCard from "./RestaurentCard";
+import { BallTriangle } from "react-loader-spinner";
 const CardList = () => {
   const [restaurents, setRestaurents] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -30,7 +31,16 @@ const CardList = () => {
   return (
     <div>
       {loading ? (
-        <div>Loading...</div>
+       <BallTriangle 
+       height={500}
+       width={1000}
+       radius={9}
+       color="#4fa94d"
+       ariaLabel="ball-triangle-loading"
+       wrapperClass={{}}
+       wrapperStyle=""
+       visible={true}
+     />
       ) : (
         <Container
           maxWidth={"md"}
